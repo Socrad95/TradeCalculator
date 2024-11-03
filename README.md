@@ -13,7 +13,7 @@
 ## 설치 방법
 
 ### 바이너리 실행
-1. [Releases](https://github.com/yourusername/trade-calculator/releases) 페이지에서 최신 버전 다운로드
+1. [Releases](https://github.com/Socrad95/TradeCalculator/releases) 페이지에서 최신 버전 다운로드
 2. 압축 해제 후 실행 파일 실행
 
 ### 소스코드 실행
