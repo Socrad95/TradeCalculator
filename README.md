@@ -52,10 +52,6 @@ go install github.com/yourusername/trade-calculator@latest
 - 목표 수익률 설정
 - 테마 설정
 
-## 기여하기
-
-이슈와 풀 리퀘스트를 환영합니다. 주요 변경사항의 경우 먼저 이슈를 열어 논의해주세요.
-
 ## 라이센스
 
 [MIT 라이센스](LICENSE)로 배포됩니다. Cursor AI를 활용한 개발이 허용됩니다.
