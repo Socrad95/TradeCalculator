@@ -96,6 +96,10 @@ func createBuyTab() *fyne.Container {
 		totalAmountLabel.SetText(fmt.Sprintf("총 매수금액: $%.2f", initialTrade.totalBuyAmount))
 		buyCommissionLabel.SetText(fmt.Sprintf("매수수수료: $%.4f", initialTrade.buyCommission))
 
+		// 손소 매도가격 계산
+		minSellPrice := buyPrice * (1 + settings.CommissionRate/100) / (1 - settings.CommissionRate/100)
+		minSellLabel := widget.NewLabel(fmt.Sprintf("최소 매도가격: $%.4f (수수료 손익분기점)", minSellPrice))
+
 		// 손절가 계산
 		stopLossPrice := buyPrice * (1 + settings.StopLossRate/100)
 		stopLossTrade := calculateTrade(buyPrice, stopLossPrice, quantity)
@@ -107,6 +111,7 @@ func createBuyTab() *fyne.Container {
 
 		// 목표수익 계산
 		profitTargetsContainer.Objects = nil
+		profitTargetsContainer.Add(minSellLabel) // 최소 매도가격 표시 추가
 		for _, rate := range settings.TargetProfitRates {
 			targetPrice := buyPrice * (1 + rate/100)
 			targetTrade := calculateTrade(buyPrice, targetPrice, quantity)
